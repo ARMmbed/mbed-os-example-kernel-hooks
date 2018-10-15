@@ -1,6 +1,6 @@
-# Application to demonstrate Mbed-OS error handling and error coding APIs
+# Application to demonstrate Mbed-OS Kernel Hooks
 
-This example demonstrates how to use the Mbed OS error handling API.
+This example demonstrates how to use the Mbed OS Kernel hooks.
 
 **Table of contents:**
 
@@ -23,8 +23,8 @@ Setup your Mbed development environment as described in - [Get started with Mbed
 From the command-line, clone the example:
 
 ```
-git clone https://github.com/ARMmbed/mbed-os-example-kernel-attach-hooks
-cd mbed-os-example-error-handling
+git clone https://github.com/ARMmbed/mbed-os-example-kernel-hooks
+cd mbed-os-example-kernel-hooks
 mbed deploy
 ```
 
@@ -38,8 +38,8 @@ mbed compile -m K64F -t ARM
 This may take few minutes and once its successfully completed it would generate the output as below.
 
 ```
-Link: mbed-os-example-kernel-attach-hooks
-Elf2Bin: mbed-os-example-kernel-attach-hooks
+Link: mbed-os-example-kernel-hooks
+Elf2Bin: mbed-os-example-kernel-hooks
 | Module             |         .text |       .data |        .bss |
 |--------------------|---------------|-------------|-------------|
 | [lib]\c_w.l        | 11449(+11449) |     16(+16) |   348(+348) |
@@ -59,7 +59,7 @@ Elf2Bin: mbed-os-example-kernel-attach-hooks
 Total Static RAM memory (data + bss): 9593(+9593) bytes
 Total Flash memory (text + data): 42583(+42583) bytes
 
-Image: .\BUILD\k64f\arm\mbed-os-example-kernel-attach-hooks.bin
+Image: .\BUILD\k64f\arm\mbed-os-example-kernel-hooks.bin
 ```
 
 #### Run the example
@@ -75,10 +75,12 @@ The output should look similar to below:
 attach_thread_terminate_hook demo:
 
 test thread started
-
 test thread exiting
-
 test thread terminated
+
+attach_idle_hook demo:
+
+idle hook invoked
 
 ```
 
